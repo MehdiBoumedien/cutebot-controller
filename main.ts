@@ -1,9 +1,12 @@
 input.onButtonPressed(Button.A, function () {
     basic.showIcon(IconNames.Yes)
-    radio.sendValue("Start", 0)
+    music.play(music.tonePlayable(587, music.beat(BeatFraction.Whole)), music.PlaybackMode.UntilDone)
+    radio.sendNumber(0)
 })
 input.onButtonPressed(Button.B, function () {
     basic.showIcon(IconNames.No)
-    radio.sendValue("Stop", 1)
+    music.play(music.tonePlayable(220, music.beat(BeatFraction.Whole)), music.PlaybackMode.UntilDone)
+    radio.sendNumber(1)
 })
+radio.setGroup(1)
 basic.showString("Remote")
